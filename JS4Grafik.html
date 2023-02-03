@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>-</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> 
+</script>
+<!-- MathJax digunakan untuk menampilkan persamaan matematika dengan LaTeX, harus dipanggil setelah Plotly -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<h1 id="menggambar-grafik-dengan-javascript">Menggambar Grafik dengan JavaScript</h1>
+<p>Sahid<br> <a href="">sahidyk@gmail.com</a></p>
+<h3 id="kanvas-html">Kanvas HTML</h3>
+<p>Kanvas HTML memberikan cara yang sempurna untuk menggambar grafik/diagram pencar (titik), grafik garis, dan kombinasinya.</p>
+<h4 id="diagram-pencar-titik-dengan-kanvas">Diagram Pencar (Titik) dengan Kanvas</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;kanvas1&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">height</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;border:1px solid grey&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> canvas <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;kanvas1&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ctx <span class="op">=</span> canvas<span class="op">.</span><span class="fu">getContext</span>(<span class="st">&quot;2d&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>canvas<span class="op">.</span><span class="at">height</span> <span class="op">=</span> canvas<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ctx<span class="op">.</span><span class="fu">transform</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> canvas<span class="op">.</span><span class="at">height</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> xArray <span class="op">=</span> [<span class="dv">50</span><span class="op">,</span><span class="dv">60</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">80</span><span class="op">,</span><span class="dv">90</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">120</span><span class="op">,</span><span class="dv">130</span><span class="op">,</span><span class="dv">140</span><span class="op">,</span><span class="dv">150</span>]<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> yArray <span class="op">=</span> [<span class="dv">7</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">10</span><span class="op">,</span><span class="dv">11</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ctx<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&quot;red&quot;</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> xArray<span class="op">.</span><span class="at">length</span><span class="op">-</span><span class="dv">1</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> x <span class="op">=</span> xArray[i]<span class="op">*</span><span class="dv">400</span><span class="op">/</span><span class="dv">150</span><span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> y <span class="op">=</span> yArray[i]<span class="op">*</span><span class="dv">400</span><span class="op">/</span><span class="dv">15</span><span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  ctx<span class="op">.</span><span class="fu">beginPath</span>()<span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  ctx<span class="op">.</span><span class="fu">ellipse</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  ctx<span class="op">.</span><span class="fu">fill</span>()<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="kanvas1" width="400" height="400" style="border:1px solid grey"></canvas>
+<script>
+const canvas = document.getElementById("kanvas1");
+const ctx = canvas.getContext("2d");
+canvas.height = canvas.width;
+ctx.transform(1, 0, 0, -1, 0, canvas.height)
+
+const xArray = [50,60,70,80,90,100,110,120,130,140,150];
+const yArray = [7,8,8,9,9,9,10,11,14,14,15];
+
+ctx.fillStyle = "red";
+for (let i = 0; i < xArray.length-1; i++) {
+  let x = xArray[i]*400/150;
+  let y = yArray[i]*400/15;
+  ctx.beginPath();
+  ctx.ellipse(x, y, 3, 3, 0, 0, Math.PI * 2);
+  ctx.fill();
+}
+</script>
+<h4 id="diagram-garis-dengan-kanvas">Diagram Garis dengan Kanvas</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;kanvas2&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">height</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;border:1px solid grey&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> canvas1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;kanvas2&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ctx1 <span class="op">=</span> canvas1<span class="op">.</span><span class="fu">getContext</span>(<span class="st">&quot;2d&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&quot;#FF0000&quot;</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>canvas1<span class="op">.</span><span class="at">height</span> <span class="op">=</span> canvas1<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="fu">transform</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> canvas1<span class="op">.</span><span class="at">height</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> xMax <span class="op">=</span> canvas1<span class="op">.</span><span class="at">height</span><span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> slope <span class="op">=</span> <span class="fl">1.2</span><span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> intercept <span class="op">=</span> <span class="dv">70</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="fu">moveTo</span>(<span class="dv">0</span><span class="op">,</span> intercept)<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="fu">lineTo</span>(xMax<span class="op">,</span> <span class="fu">f</span>(xMax))<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="at">strokeStyle</span> <span class="op">=</span> <span class="st">&quot;black&quot;</span><span class="op">;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ctx1<span class="op">.</span><span class="fu">stroke</span>()<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x) {</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x <span class="op">*</span> slope <span class="op">+</span> intercept<span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="kanvas2" width="400" height="400" style="border:1px solid grey"></canvas>
+<script>
+const canvas1 = document.getElementById("kanvas2");
+const ctx1 = canvas1.getContext("2d");
+ctx1.fillStyle = "#FF0000";
+canvas1.height = canvas1.width;
+ctx1.transform(1, 0, 0, -1, 0, canvas1.height)
+
+let xMax = canvas1.height;
+let slope = 1.2;
+let intercept = 70;
+
+ctx1.moveTo(0, intercept);
+ctx1.lineTo(xMax, f(xMax));
+ctx1.strokeStyle = "black";
+ctx1.stroke();
+
+function f(x) {
+  return x * slope + intercept;
+}
+</script>
+<h2 id="kanvas-gabungan-untuk-diagram-pencar-dan-grafik-garis">Kanvas Gabungan untuk Diagram Pencar dan Grafik Garis</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;kanvas3&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">height</span><span class="ot">=</span><span class="st">&quot;400&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;border:1px solid grey&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> canvas2 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;kanvas3&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ctx2 <span class="op">=</span> canvas2<span class="op">.</span><span class="fu">getContext</span>(<span class="st">&quot;2d&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&quot;#FF0000&quot;</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>canvas2<span class="op">.</span><span class="at">height</span> <span class="op">=</span> canvas2<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="fu">transform</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> canvas2<span class="op">.</span><span class="at">height</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> xMax2 <span class="op">=</span> canvas2<span class="op">.</span><span class="at">height</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> yMax2 <span class="op">=</span> canvas2<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> slope2 <span class="op">=</span> <span class="fl">1.2</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> intercept2 <span class="op">=</span> <span class="dv">70</span><span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> xArray2 <span class="op">=</span> [<span class="dv">50</span><span class="op">,</span><span class="dv">60</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">80</span><span class="op">,</span><span class="dv">90</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">120</span><span class="op">,</span><span class="dv">130</span><span class="op">,</span><span class="dv">140</span><span class="op">,</span><span class="dv">150</span>]<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> yArray2 <span class="op">=</span> [<span class="dv">7</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">10</span><span class="op">,</span><span class="dv">11</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Diagram pencar</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&quot;red&quot;</span><span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> xArray2<span class="op">.</span><span class="at">length</span><span class="op">-</span><span class="dv">1</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> x2 <span class="op">=</span> xArray2[i]<span class="op">*</span>xMax2<span class="op">/</span><span class="dv">150</span><span class="op">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> y2 <span class="op">=</span> yArray2[i]<span class="op">*</span>yMax2<span class="op">/</span><span class="dv">15</span><span class="op">;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ctx2<span class="op">.</span><span class="fu">beginPath</span>()<span class="op">;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  ctx2<span class="op">.</span><span class="fu">ellipse</span>(x2<span class="op">,</span> y2<span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  ctx2<span class="op">.</span><span class="fu">fill</span>()<span class="op">;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">// Grafik garis</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="fu">moveTo</span>(<span class="dv">0</span><span class="op">,</span> intercept2)<span class="op">;</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="fu">lineTo</span>(xMax2<span class="op">,</span> <span class="fu">f</span>(xMax2))<span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="at">strokeStyle</span> <span class="op">=</span> <span class="st">&quot;black&quot;</span><span class="op">;</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ctx2<span class="op">.</span><span class="fu">stroke</span>()<span class="op">;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">// Fungsi linier</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x) {</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x <span class="op">*</span> slope2 <span class="op">+</span> intercept2<span class="op">;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="kanvas3" width="400" height="400" style="border:1px solid grey"></canvas>
+<script>
+const canvas2 = document.getElementById("kanvas3");
+const ctx2 = canvas2.getContext("2d");
+ctx2.fillStyle = "#FF0000";
+canvas2.height = canvas2.width;
+ctx2.transform(1, 0, 0, -1, 0, canvas2.height)
+
+let xMax2 = canvas2.height;
+let yMax2 = canvas2.width;
+let slope2 = 1.2;
+let intercept2 = 70;
+
+const xArray2 = [50,60,70,80,90,100,110,120,130,140,150];
+const yArray2 = [7,8,8,9,9,9,10,11,14,14,15];
+
+// Diagram pencar
+ctx2.fillStyle = "red";
+for (let i = 0; i < xArray2.length-1; i++) {
+  let x2 = xArray2[i]*xMax2/150;
+  let y2 = yArray2[i]*yMax2/15;
+  ctx2.beginPath();
+  ctx2.ellipse(x2, y2, 3, 3, 0, 0, Math.PI * 2);
+  ctx2.fill();
+}
+
+// Grafik garis
+ctx2.moveTo(0, intercept2);
+ctx2.lineTo(xMax2, f(xMax2));
+ctx2.strokeStyle = "black";
+ctx2.stroke();
+
+// Fungsi linier
+function f(x) {
+  return x * slope2 + intercept2;
+}
+</script>
+<h3 id="pustaka-grafik-pada-javascript">Pustaka Grafik pada JavaScript</h3>
+<p>Pustaka JavaScript yang akan digunakan untuk menggambar grafik Kecerdasan Buatan dan grafik lainnya adalah:</p>
+<ul>
+<li><code>Plotly.js</code></li>
+<li><code>Chart.js</code></li>
+<li>Bagan Google (Google Chart)</li>
+</ul>
+<h3 id="plotlyjs"><code>Plotly.js</code></h3>
+<p><code>Plotly.js</code> adalah pustaka JavaScript yang menyediakann lebih dari 40 jenis diagram, termasuk grafik 2D, grafik 3D, grafik statistik, dan peta SVG.</p>
+<p><img src="https://www.w3schools.com/ai/img_plotly_scatter_chart.jpg" alt="Chart.js Scatter" /></p>
+<h3 id="chartjs"><code>Chart.js</code></h3>
+<p>Pustaka <code>Chart.js</code> menyediakan banyak diagram, di antaranya:</p>
+<ul>
+<li>diagram titik (<em>Scatter plot</em>),</li>
+<li>diagram garis,</li>
+<li>diagram batang,</li>
+<li>diagram Radar,</li>
+<li>diagram dingkaran dan donat,</li>
+<li>diagram (bidang) kutub (polar), dan</li>
+<li>diagram gelembung.</li>
+</ul>
+<p><img src="https://www.w3schools.com/ai/img_chartjs_scatter_chart.jpg" alt="Chart.js Scatter" /></p>
+<h3 id="diagram-google">Diagram Google</h3>
+<p>Diagram Google menyediakan sejumlah jenis diagram, mulai dari diagram garis sederhana sampai peta pohon yang rumit:</p>
+<ul>
+<li>diagram titik (<em>scatter plot</em>),</li>
+<li>diagram garis,</li>
+<li>diagram batang/kolom,</li>
+<li>diagram luasan,</li>
+<li>diagram lingkaran,</li>
+<li>diagram donat,</li>
+<li>diagram organisasi</li>
+<li>diagram peta/geografis</li>
+</ul>
+<p><img src="https://www.w3schools.com/ai/img_google_scatter_chart.jpg" alt="Google Scatter" /></p>
+<h2 id="menggambar-grafik-dan-diagram-dengan-pustaka-plotlyjs">Menggambar Grafik dan Diagram dengan Pustaka <code>Plotly.js</code></h2>
+<p>Berikut adalah beberapa contoh diagram yang dapat dibuat dengan menggunakan pustaka JavaScript <strong>Plotly.js</strong>. Untuk memanggil pustaka tersebut, pada dokumen HTML dituliskan perintah:</p>
+<p><code>&lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;</code>.</p>
+<p>Perintah tersebut dapat ditulis di bagian awal dokumen (misalnya setelah tag <code>&lt;body&gt;</code>).</p>
+<h4 id="contoh-1-diagram-titik-pencar">Contoh 1: Diagram Titik (Pencar)</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagpencar&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray3 <span class="op">=</span> [<span class="dv">50</span><span class="op">,</span><span class="dv">60</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">80</span><span class="op">,</span><span class="dv">90</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">120</span><span class="op">,</span><span class="dv">130</span><span class="op">,</span><span class="dv">140</span><span class="op">,</span><span class="dv">150</span>]<span class="op">;</span>  </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray3 <span class="op">=</span> [<span class="dv">7</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">10</span><span class="op">,</span><span class="dv">11</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{ <span class="dt">x</span><span class="op">:</span> xArray3<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> yArray3<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;markers&quot;</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span><span class="st">&quot;scatter&quot;</span>}]<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {  </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">xaxis</span><span class="op">:</span> {<span class="dt">range</span><span class="op">:</span> [<span class="dv">40</span><span class="op">,</span> <span class="dv">160</span>]<span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;Square Meters&quot;</span>}<span class="op">,</span>  </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">yaxis</span><span class="op">:</span> {<span class="dt">range</span><span class="op">:</span> [<span class="dv">5</span><span class="op">,</span> <span class="dv">16</span>]<span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;Price in Millions&quot;</span>}<span class="op">,</span>  </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;House Prices vs. Size&quot;</span>  </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;diagpencar&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span></code></pre></div>
+<div id="diagpencar" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var xArray3 = [50,60,70,80,90,100,110,120,130,140,150];
+var yArray3 = [7,8,8,9,9,9,10,11,14,14,15];
+
+// Data
+var data = [{ x:xArray3, y:yArray3, mode:"markers"}];
+
+// Layout
+var layout = {
+  xaxis: {range: [40, 160], title: "Luas (Meter Persegi)"},
+  yaxis: {range: [5, 16], title: "Harga (dalam Puluhan Juta Rupiah)"},  
+  title: "Harga rumah menurut ukuran"
+};
+
+// Tampilkan diagram dengan Plotly
+Plotly.newPlot("diagpencar", data, layout);
+</script>
+<h4 id="diagram-garis">Diagram Garis</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagaris&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray4 <span class="op">=</span> [<span class="dv">50</span><span class="op">,</span><span class="dv">60</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">80</span><span class="op">,</span><span class="dv">90</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">120</span><span class="op">,</span><span class="dv">130</span><span class="op">,</span><span class="dv">140</span><span class="op">,</span><span class="dv">150</span>]<span class="op">;</span>  </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray4 <span class="op">=</span> [<span class="dv">7</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">8</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">9</span><span class="op">,</span><span class="dv">10</span><span class="op">,</span><span class="dv">11</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">14</span><span class="op">,</span><span class="dv">15</span>]<span class="op">;</span>  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">x4</span><span class="op">:</span> xArray4<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> yArray4<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span> <span class="st">&quot;lines&quot;</span><span class="op">,</span><span class="dt">type</span><span class="op">:</span> <span class="st">&quot;scatter&quot;</span>}]<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {  </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">xaxis</span><span class="op">:</span> {<span class="dt">range</span><span class="op">:</span> [<span class="dv">40</span><span class="op">,</span> <span class="dv">160</span>]<span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;Luas (Meter Persegi)&quot;</span>}<span class="op">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">yaxis</span><span class="op">:</span> {<span class="dt">range</span><span class="op">:</span> [<span class="dv">5</span><span class="op">,</span> <span class="dv">16</span>]<span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;Harga (dalam Puluhan Juta Rupiah)&quot;</span>}<span class="op">,</span>  </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;Harga rumah menurut ukuran&quot;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;diagaris&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="diagaris" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var xArray4 = [50,60,70,80,90,100,110,120,130,140,150];  
+var yArray4 = [7,8,8,9,9,9,10,11,14,14,15];  
+  
+var data = [{ x: xArray4, y: yArray4, mode: "lines", type: "scatter"}]; 
+  
+var layout = {  
+  xaxis: {range: [40, 160], title: "Luas (Meter Persegi)"},
+  yaxis: {range: [5, 16], title: "Harga (dalam Puluhan Juta Rupiah)"},  
+  title: "Harga rumah menurut ukuran"
+};
+
+Plotly.newPlot("diagaris", data, layout);
+
+</script>
+<h4 id="grafik-persamaan-linier">Grafik Persamaan Linier</h4>
+<p>Berikut adalah contoh menggambar grafik persamaan linier $y = 2x +7$ dengan menggunakan Plotly.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;graflin&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persamaan <span class="op">=</span> <span class="st">&quot;2*x + 7&quot;</span><span class="op">;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues <span class="op">=</span> []<span class="op">;</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yValues <span class="op">=</span> []<span class="op">;</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x <span class="op">+=</span> <span class="dv">1</span>) {yValues<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(persamaan))<span class="op">;</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>xValues<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span> } </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">x</span><span class="op">:</span> xValues<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> yValues<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span> <span class="st">&quot;lines&quot;</span>}]<span class="op">;</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span> <span class="st">&quot;y = &quot;</span> <span class="op">+</span> persamaan}<span class="op">;</span> </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;graflin&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="graflin" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var persamaan = "2*x + 7"; 
+var xValues = []; 
+var yValues = []; 
+for (var x = 0; x <= 10; x += 1) {yValues.push(eval(persamaan)); 
+xValues.push(x); } 
+ 
+var data = [{x: xValues, y: yValues, mode: "lines"}]; 
+var layout = {title: "y = " + persamaan}; 
+Plotly.newPlot("graflin", data, layout);
+</script>
+<h4 id="menggambar-beberapa-persamaan-linier">Menggambar Beberapa Persamaan Linier</h4>
+<p>$$y=x,\quad y=-1.5x+5,\quad y=2x - 7 $$</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;multiline&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> p1 <span class="op">=</span> <span class="st">&quot;x&quot;</span><span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> p2 <span class="op">=</span> <span class="st">&quot;-1.5*x+5&quot;</span><span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> p3 <span class="op">=</span> <span class="st">&quot;2*x - 7&quot;</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">// Menghitung nilai-nilai x dan y</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> x1Values <span class="op">=</span> []<span class="op">;</span><span class="kw">var</span> x2Values <span class="op">=</span> []<span class="op">;</span><span class="kw">var</span> x3Values <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> y1Values <span class="op">=</span> []<span class="op">;</span><span class="kw">var</span> y2Values <span class="op">=</span> []<span class="op">;</span><span class="kw">var</span> y3Values <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x <span class="op">+=</span> <span class="dv">1</span>) {</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  x1Values<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span>  x2Values<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span>  x3Values<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  y1Values<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(p1))<span class="op">;</span>  y2Values<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(p2))<span class="op">;</span> y3Values<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(p3))<span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Data</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">x</span><span class="op">:</span> x1Values<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1Values<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;lines&quot;</span>}<span class="op">,</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">x</span><span class="op">:</span> x2Values<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2Values<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;lines&quot;</span>}<span class="op">,</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">x</span><span class="op">:</span> x3Values<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y3Values<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;lines&quot;</span>}</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">//Layout</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span> <span class="st">&quot;[y=&quot;</span> <span class="op">+</span> p1 <span class="op">+</span> <span class="st">&quot;]  [y=&quot;</span> <span class="op">+</span> p2 <span class="op">+</span> <span class="st">&quot;]  [y=&quot;</span> <span class="op">+</span> p3 <span class="op">+</span> <span class="st">&quot;]&quot;</span>}<span class="op">;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">// Tampilkan ketiga grafik dengan Plotly</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;multiline&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="multiline" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var p1 = "x";
+var p2 = "-1.5*x+5";
+var p3 = "2*x - 7";
+
+// Menghitung nilai-nilai x dan y
+var x1Values = [];var x2Values = [];var x3Values = [];
+var y1Values = [];var y2Values = [];var y3Values = [];
+
+for (var x = 0; x <= 10; x += 1) {
+  x1Values.push(x);  x2Values.push(x);  x3Values.push(x);
+  y1Values.push(eval(p1));  y2Values.push(eval(p2)); y3Values.push(eval(p3));
+}
+
+// Data
+var data = [
+  {x: x1Values, y: y1Values, mode:"lines"},
+  {x: x2Values, y: y2Values, mode:"lines"},
+  {x: x3Values, y: y3Values, mode:"lines"}
+];
+
+//Layout
+var layout = {title: "[y=" + p1 + "]  [y=" + p2 + "]  [y=" + p3 + "]"};
+
+// Tampilkan ketiga grafik dengan Plotly
+Plotly.newPlot("multiline", data, layout);
+</script>
+<h4 id="diagram-batang">Diagram Batang</h4>
+<h5 id="diagram-batang-tegak">Diagram Batang Tegak</h5>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;bardiag&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray5 <span class="op">=</span> [<span class="st">&quot;Italy&quot;</span><span class="op">,</span><span class="st">&quot;France&quot;</span><span class="op">,</span><span class="st">&quot;Spain&quot;</span><span class="op">,</span><span class="st">&quot;USA&quot;</span><span class="op">,</span><span class="st">&quot;Argentina&quot;&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray5 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">x</span><span class="op">:</span> xArray5<span class="op">,</span><span class="dt">y</span><span class="op">:</span> yArray5<span class="op">,</span><span class="dt">type</span><span class="op">:</span> <span class="st">&quot;bar&quot;</span>  }]<span class="op">;</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span><span class="st">&quot;Produksi Anggur Dunia&quot;</span>}<span class="op">;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;bardiag&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="bardiag" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var xArray5 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"]; 
+var yArray5 = [55, 49, 44, 24, 15];
+
+var data = [{x: xArray5,y: yArray5,type: "bar"  }]; 
+var layout = {title:"Produksi Anggur Dunia"};
+
+Plotly.newPlot("bardiag", data, layout);
+</script>
+<h5 id="diagram-batang-miring">Diagram Batang Miring</h5>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;bardiag1&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray6 <span class="op">=</span> [<span class="st">&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray6 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{ <span class="dt">x</span><span class="op">:</span>xArray6<span class="op">,</span>  <span class="dt">y</span><span class="op">:</span>yArray6<span class="op">,</span>  <span class="dt">type</span><span class="op">:</span><span class="st">&quot;bar&quot;</span>}]<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span><span class="st">&quot;Produksi Anggur Dunia&quot;</span>}<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;bardiag1&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="bardiag1" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var yArray6 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var xArray6 = [55, 49, 44, 24, 15];
+
+var data = [{x:xArray6, y:yArray6, type:"bar", orientation:"h",
+  marker: {color:"rgba(255,0,0,0.6)"}
+}];
+
+var layout = {title:"Produksi Anggur Dunia"};
+
+Plotly.newPlot("bardiag1", data, layout);
+</script>
+<h4 id="diagram-lingkaran-dan-donat">Diagram Lingkaran dan Donat</h4>
+<p>Untuk menampilkan diagram lingkaran, pada definisi data gunakan properti <code>labels</code> untuk mengganti <code>x</code> dan <code>values</code> untuk mengganti <code>y</code> dan <code>type</code> bernilai <code>"pie"</code>. Untuk membuat diagram donat, tambahkan properti <code>hole</code> dengan nilai bilangan pecahan antara 0 dan 1.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diaglingkar&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray7 <span class="op">=</span> [<span class="st">&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray7 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">labels</span><span class="op">:</span> xArray7<span class="op">,</span> <span class="dt">values</span><span class="op">:</span> yArray7<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;pie&quot;</span>}]<span class="op">;</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span><span class="st">&quot;Produksi Anggur Dunia&quot;</span>}<span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;diaglingkar&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="diaglingkar" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var xArray7 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yArray7 = [55, 49, 44, 24, 15];
+
+var data = [{labels: xArray7, values: yArray7, type: "pie"}]; 
+
+var layout = {title:"Produksi Anggur Dunia"};
+
+Plotly.newPlot("diaglingkar", data, layout);
+</script>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagdonat&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xArray8 <span class="op">=</span> [<span class="st">&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yArray8 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">labels</span><span class="op">:</span> xArray8<span class="op">,</span> <span class="dt">values</span><span class="op">:</span> yArray8<span class="op">,</span> <span class="dt">hole</span><span class="op">:</span> <span class="op">.</span><span class="dv">4</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;pie&quot;</span>}]<span class="op">;</span> </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span><span class="st">&quot;Produksi Anggur Dunia&quot;</span>}<span class="op">;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;diagdonat&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="diagdonat" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var xArray8 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yArray8 = [55, 49, 44, 24, 15];
+
+var data = [{labels: xArray8, values: yArray8, hole: .4, type: "pie"}]; 
+
+var layout = {title:"Produksi Anggur Dunia"};
+
+Plotly.newPlot("diagdonat", data, layout);
+</script>
+<h4 id="kurva-persamaan">Kurva Persamaan</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;kurva1&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persin <span class="op">=</span> <span class="st">&quot;Math.sin(x)&quot;</span><span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Nilai-nilai x dan y</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues <span class="op">=</span> []<span class="op">;</span> <span class="kw">var</span> yValues <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x <span class="op">+=</span> <span class="fl">0.1</span>) {</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  xValues<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span>   yValues<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(persin))<span class="op">;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">// Menampilkan kurva fungsi dengan Plotly</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">x</span><span class="op">:</span>xValues<span class="op">,</span> <span class="dt">y</span><span class="op">:</span>yValues<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;lines&quot;</span>}]<span class="op">;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span> <span class="st">&quot;y = sin(x)&quot;</span>}<span class="op">;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;kurva1&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="kurva1" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var persin = "Math.sin(x)";
+
+// Nilai-nilai x dan y
+var xValues = []; var yValues = [];
+for (var x = 0; x <= 10; x += 0.1) {
+  xValues.push(x);   yValues.push(eval(persin));
+}
+
+// Menampilkan kurva fungsi dengan Plotly
+var data = [{x:xValues, y:yValues, mode:"lines"}];
+var layout = {title: "y = sin(x)"};
+Plotly.newPlot("kurva1", data, layout);
+</script>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;kurvacos&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> exp <span class="op">=</span> <span class="st">&quot;Math.cos(x)&quot;</span><span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Nilai-nilai x dan y</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yValues <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x <span class="op">+=</span> <span class="fl">0.2</span>) {</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  yValues<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(exp))<span class="op">;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  xValues<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Menampilkan kurva fungsi dengan Plotly</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> [{<span class="dt">x</span><span class="op">:</span>xValues<span class="op">,</span> <span class="dt">y</span><span class="op">:</span>yValues<span class="op">,</span> <span class="dt">mode</span><span class="op">:</span><span class="st">&quot;markers&quot;</span>}]<span class="op">;</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> layout <span class="op">=</span> {<span class="dt">title</span><span class="op">:</span> <span class="st">&quot;y = cos(x)&quot;</span>}<span class="op">;</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>Plotly<span class="op">.</span><span class="fu">newPlot</span>(<span class="st">&quot;kurvacos&quot;</span><span class="op">,</span> data<span class="op">,</span> layout)<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div id="kurvacos" style="width:100%;max-width:700px">
+
+</div>
+<script>
+var exp = "Math.cos(x)";
+
+// Nilai-nilai x dan y
+var xValues = [];
+var yValues = [];
+for (var x = 0; x <= 10; x += 0.2) {
+  yValues.push(eval(exp));
+  xValues.push(x);
+}
+
+// Menampilkan kurva fungsi dengan Plotly
+var data = [{x:xValues, y:yValues, mode:"markers"}];
+var layout = {title: "y = cos(x)"};
+Plotly.newPlot("kurvacos", data, layout);
+</script>
+<h2 id="menggambar-grafik-dan-diagram-dengan-pustaka-chartjs">Menggambar Grafik dan Diagram dengan Pustaka <code>Chart.js</code></h2>
+<p><code>Chart.js</code> adalah pustaka JavaScript gratis untuk membuat diagram berbasis HTML. Ini adalah salah satu perpustakaan visualisasi paling sederhana untuk JavaScript, dan dilengkapi dengan tipe diagram bawaan berikut:</p>
+<ul>
+<li>Diagram Tititk (Pencar)</li>
+<li>Diagram Garis</li>
+<li>Diagram batang</li>
+<li>Diagram Lingkaran</li>
+<li>Diagram Donat</li>
+<li>Diagram Gelembung</li>
+<li>Diagram Luasan</li>
+<li>Diagram Radar</li>
+<li>Diagram Campuran</li>
+</ul>
+<p>Bagaimana Cara Menggunakan <code>Chart.js</code>? Cara menggunakan pustaka <code>Chart.js</code> sama dengan cara menggunakan pustaka <code>Plotly.js</code>, yakni dengan menambahkan link ke penyedia <strong>CDN</strong> (<em>Content Delivery Network</em>):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ot">src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js&quot;</span><span class="kw">&gt;</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Apabila dokumen HTML juga perlu menggunakan MathJax, maka pemanggilan pustaka <code>Chart.js</code> harus dilakukan sebelum memanggil MathJax.</p>
+<p>Selanjutnya, gunakan <code>&lt;canvas&gt;</code> di tempat untuk menampilkan diagram, dengan memberikan identitas (<code>id</code>) unik, misalnya:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagramku&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span></code></pre></div>
+<p>Sintaks umum untuk menghasilkan diagram pencar (titik):</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>var diagramku=new Chart(&quot;diagramku&quot;,{type:&quot;scatter&quot;,data:{},options:{}});</span></code></pre></div>
+<p>Sintaks umum untuk menghasilkan gambar diagram garis:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>var diagramku=new Chart(&quot;diagramku&quot;,{type:&quot;line&quot;,data:{},options:{}});</span></code></pre></div>
+<p>Sintaks umum untuk menggambar diagram batang:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>var diagramku=new Chart(&quot;diagramku&quot;,{type:&quot;bar&quot;,data:{},options:{}});</span></code></pre></div>
+<h4 id="contoh-diagram-pencar-dengan-chartjs">Contoh Diagram Pencar dengan <code>Chart.js</code></h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagpencar1&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:700px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xyValues <span class="op">=</span> [{<span class="dt">x</span><span class="op">:</span><span class="dv">50</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">7</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">60</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">8</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">70</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">8</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">80</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">9</span>}<span class="op">,</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">x</span><span class="op">:</span><span class="dv">90</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">9</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">100</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">9</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">110</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">10</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">120</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">11</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">130</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">14</span>}<span class="op">,</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">x</span><span class="op">:</span><span class="dv">140</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">14</span>}<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span><span class="dv">150</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="dv">15</span>}]<span class="op">;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">Chart</span>(<span class="st">&quot;diagpencar1&quot;</span><span class="op">,</span> {</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;scatter&quot;</span><span class="op">,</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span><span class="op">:</span> {</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">datasets</span><span class="op">:</span> [{</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">pointRadius</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">pointBackgroundColor</span><span class="op">:</span> <span class="st">&quot;rgb(0,0,255)&quot;</span><span class="op">,</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> xyValues</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">options</span><span class="op">:</span> {</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> {<span class="dt">display</span><span class="op">:</span> <span class="kw">false</span>}<span class="op">,</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scales</span><span class="op">:</span> {</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">xAxes</span><span class="op">:</span> [{<span class="dt">ticks</span><span class="op">:</span> {<span class="dt">min</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="dv">160</span>}}]<span class="op">,</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">yAxes</span><span class="op">:</span> [{<span class="dt">ticks</span><span class="op">:</span> {<span class="dt">min</span><span class="op">:</span> <span class="dv">6</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="dv">16</span>}}]<span class="op">,</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script</span></span></code></pre></div>
+<p><strong>Harga rumah (puluhan juta rupiah) vs ukuran rumah (meter persegi)</strong></p>
+<canvas id="diagpencar1" style="width:100%;max-width:700px"></canvas>
+<script>
+var xyValues = [{x:50, y:7},{x:60, y:8},{x:70, y:8},{x:80, y:9},
+  {x:90, y:9},{x:100, y:9},{x:110, y:10},{x:120, y:11},{x:130, y:14},
+  {x:140, y:14},{x:150, y:15}];
+
+new Chart("diagpencar1", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(0,0,255)",
+      data: xyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 40, max:160}}],
+      yAxes: [{ticks: {min: 6, max:16}}], }
+  }
+});
+</script>
+<h4 id="contoh-diagram-garis-dengan-chartjs">Contoh Diagram Garis dengan <code>Chart.js</code></h4>
+<canvas id="diagaris1" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues1 = [50,60,70,80,90,100,110,120,130,140,150];
+var yValues1 = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("diagaris1", {
+  type: "line",
+  data: {
+    labels: xValues1,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues1
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+<p>Jika digunakan properti <code>borderColor: "rgba(0,0,0,0)"</code>, diagram garis menjadi diagram titik.</p>
+<h4 id="contoh-diagram-multi-kurva">Contoh diagram multi kurva</h4>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;multikurva&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:600px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues2 <span class="op">=</span> [<span class="dv">100</span><span class="op">,</span><span class="dv">200</span><span class="op">,</span><span class="dv">300</span><span class="op">,</span><span class="dv">400</span><span class="op">,</span><span class="dv">500</span><span class="op">,</span><span class="dv">600</span><span class="op">,</span><span class="dv">700</span><span class="op">,</span><span class="dv">800</span><span class="op">,</span><span class="dv">900</span><span class="op">,</span><span class="dv">1000</span>]<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">Chart</span>(<span class="st">&quot;multikurva&quot;</span><span class="op">,</span> {</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;line&quot;</span><span class="op">,</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span><span class="op">:</span> {</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">labels</span><span class="op">:</span> xValues2<span class="op">,</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">datasets</span><span class="op">:</span> [{ </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> [<span class="dv">860</span><span class="op">,</span><span class="dv">1140</span><span class="op">,</span><span class="dv">1060</span><span class="op">,</span><span class="dv">1060</span><span class="op">,</span><span class="dv">1070</span><span class="op">,</span><span class="dv">1110</span><span class="op">,</span><span class="dv">1330</span><span class="op">,</span><span class="dv">2210</span><span class="op">,</span><span class="dv">7830</span><span class="op">,</span><span class="dv">2478</span>]<span class="op">,</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">borderColor</span><span class="op">:</span> <span class="st">&quot;red&quot;</span><span class="op">,</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> { </span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> [<span class="dv">1600</span><span class="op">,</span><span class="dv">1700</span><span class="op">,</span><span class="dv">1700</span><span class="op">,</span><span class="dv">1900</span><span class="op">,</span><span class="dv">2000</span><span class="op">,</span><span class="dv">2700</span><span class="op">,</span><span class="dv">4000</span><span class="op">,</span><span class="dv">5000</span><span class="op">,</span><span class="dv">6000</span><span class="op">,</span><span class="dv">7000</span>]<span class="op">,</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">borderColor</span><span class="op">:</span> <span class="st">&quot;green&quot;</span><span class="op">,</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> { </span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> [<span class="dv">300</span><span class="op">,</span><span class="dv">700</span><span class="op">,</span><span class="dv">2000</span><span class="op">,</span><span class="dv">5000</span><span class="op">,</span><span class="dv">6000</span><span class="op">,</span><span class="dv">4000</span><span class="op">,</span><span class="dv">2000</span><span class="op">,</span><span class="dv">1000</span><span class="op">,</span><span class="dv">200</span><span class="op">,</span><span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">borderColor</span><span class="op">:</span> <span class="st">&quot;blue&quot;</span><span class="op">,</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">options</span><span class="op">:</span> {</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> {<span class="dt">display</span><span class="op">:</span> <span class="kw">false</span>}</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="multikurva" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues2 = [100,200,300,400,500,600,700,800,900,1000];
+
+new Chart("multikurva", {
+  type: "line",
+  data: {
+    labels: xValues2,
+    datasets: [{ 
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      borderColor: "red",
+      fill: false
+    }, { 
+      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      borderColor: "green",
+      fill: false
+    }, { 
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+</script>
+<h4 id="contoh-grafik-linier-dengan-chartjs">Contoh Grafik Linier dengan <code>Chart.js</code></h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diaglin1&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:600px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yValues <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">generateData</span>(<span class="st">&quot;2*x + 7&quot;</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.5</span>)<span class="op">;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">Chart</span>(<span class="st">&quot;diaglin1&quot;</span><span class="op">,</span> {</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;line&quot;</span><span class="op">,</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span><span class="op">:</span> {</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">labels</span><span class="op">:</span> xValues<span class="op">,</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">datasets</span><span class="op">:</span> [{</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">pointRadius</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">borderColor</span><span class="op">:</span> <span class="st">&quot;rgba(255,0,0,0.5)&quot;</span><span class="op">,</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> yValues</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span>    </span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">options</span><span class="op">:</span> {</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> {<span class="dt">display</span><span class="op">:</span> <span class="kw">false</span>}<span class="op">,</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> {</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">display</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="st">&quot;y = 2x + 7&quot;</span><span class="op">,</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">generateData</span>(value<span class="op">,</span> i1<span class="op">,</span> i2<span class="op">,</span> step <span class="op">=</span> <span class="dv">1</span>) {</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> i1<span class="op">;</span> x <span class="op">&lt;=</span> i2<span class="op">;</span> x <span class="op">+=</span> step) {</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    yValues<span class="op">.</span><span class="fu">push</span>(<span class="pp">eval</span>(value))<span class="op">;</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    xValues<span class="op">.</span><span class="fu">push</span>(x)<span class="op">;</span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="diaglin1" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues = [];
+var yValues = [];
+generateData("2*x + 7", 0, 10, 0.5);
+
+new Chart("diaglin1", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      pointRadius: 1,
+      borderColor: "rgba(255,0,0,0.5)",
+      data: yValues
+    }]
+  },    
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "y = 2x + 7",
+      fontSize: 16
+    }
+  }
+});
+function generateData(value, i1, i2, step = 1) {
+  for (let x = i1; x <= i2; x += step) {
+    yValues.push(eval(value));
+    xValues.push(x);
+  }
+}
+</script>
+<h4 id="menggambar-grafik-fungsi-dengan-chartjs">Menggambar Grafik Fungsi dengan <code>Chart.js</code></h4>
+<p>Cara menggambar grafik fungsi sama dengan cara menggambar grafik linier, namun dengan mengubah paramter pada fungsi <code>generateData()</code>, misalnya:</p>
+<p><code>generateData("Math.sin(x)", 0, 10, 0.5);</code></p>
+<canvas id="diagsin" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues = [];
+var yValues = [];
+generateData("Math.sin(x)", 0, 10, 0.5);
+
+new Chart("diagsin", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      pointRadius: 1,
+      borderColor: "rgba(255,0,0,0.5)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "y = sin(x)",
+      fontSize: 16
+    }
+  }
+});
+function generateData(value, i1, i2, step = 1) {
+  for (let x = i1; x <= i2; x += step) {
+    yValues.push(eval(value));
+    xValues.push(x);
+  }
+}
+</script>
+<hr />
+<h4 id="diagram-batang-dengan-chartjs">Diagram Batang dengan <code>Chart.js</code></h4>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diagbatang2&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:600px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues3 <span class="op">=</span> [<span class="st">&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yValues3 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> barColors <span class="op">=</span> [<span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span><span class="st">&quot;blue&quot;</span><span class="op">,</span><span class="st">&quot;orange&quot;</span><span class="op">,</span><span class="st">&quot;brown&quot;</span>]<span class="op">;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">Chart</span>(<span class="st">&quot;diagbatang2&quot;</span><span class="op">,</span> {</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;bar&quot;</span><span class="op">,</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span><span class="op">:</span> {</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">labels</span><span class="op">:</span> xValues3<span class="op">,</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">datasets</span><span class="op">:</span> [{</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">backgroundColor</span><span class="op">:</span> barColors<span class="op">,</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> yValues3</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">options</span><span class="op">:</span> {<span class="dt">legend</span><span class="op">:</span> {<span class="dt">display</span><span class="op">:</span> <span class="kw">false</span>}<span class="op">,</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> {</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">display</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="st">&quot;Produksi Anggur Dunia Tahun 2018&quot;</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="diagbatang2" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues3 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yValues3 = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("diagbatang2", {
+  type: "bar",
+  data: {
+    labels: xValues3,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues3
+    }]
+  },
+  options: {legend: {display: false},
+    title: {
+      display: true,
+      text: "Produksi Anggur Dunia Tahun 2018"
+    }
+  }
+});
+</script>
+<h4 id="diagram-batang-horisontal">Diagram Batang Horisontal</h4>
+<p>Untuk membuat diagram datang horisontal, ganti kata “bar” menjadi “horizontalBar”:</p>
+<p><code>type: "horizontalBar"</code>.</p>
+<canvas id="diagbatang3" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues4 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yValues4 = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("diagbatang3", {
+  type: "horizontalBar",
+  data: {
+    labels: xValues4,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues4
+    }]
+  },
+  options: {legend: {display: false},
+    title: {
+      display: true,
+      text: "Produksi Anggur Dunia Tahun 2018"
+    }
+  }
+});
+</script>
+<h4 id="diagram-lingkaran">Diagram Lingkaran</h4>
+<div class="sourceCode" id="cb23"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;diaglin3&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100%;max-width:600px&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xValues4 <span class="op">=</span> [<span class="st">&quot;Italia&quot;</span><span class="op">,</span> <span class="st">&quot;Perancis&quot;</span><span class="op">,</span> <span class="st">&quot;Spanyol&quot;</span><span class="op">,</span> <span class="st">&quot;USA&quot;</span><span class="op">,</span> <span class="st">&quot;Argentina&quot;</span>]<span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yValues4 <span class="op">=</span> [<span class="dv">55</span><span class="op">,</span> <span class="dv">49</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> barColors <span class="op">=</span> [</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#b91d47&quot;</span><span class="op">,</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#00aba9&quot;</span><span class="op">,</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#2b5797&quot;</span><span class="op">,</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#e8c3b9&quot;</span><span class="op">,</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#1e7145&quot;</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">Chart</span>(<span class="st">&quot;diaglin3&quot;</span><span class="op">,</span> { </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;pie&quot;</span><span class="op">,</span> </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span><span class="op">:</span> { </span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">labels</span><span class="op">:</span> xValues4<span class="op">,</span> </span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">datasets</span><span class="op">:</span> [{ </span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">backgroundColor</span><span class="op">:</span> barColors<span class="op">,</span> </span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> yValues4 </span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    }] </span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> </span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">options</span><span class="op">:</span> { </span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> { </span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">display</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> </span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="st">&quot;Produksi Anggur Dunia 2018&quot;</span> </span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    } </span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<canvas id="diaglin3" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues4 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yValues4 = [55, 49, 44, 24, 15];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+new Chart("diaglin3", { 
+  type: "pie", 
+  data: { 
+    labels: xValues4, 
+    datasets: [{ 
+      backgroundColor: barColors, 
+      data: yValues4 
+    }] 
+  }, 
+  options: { 
+    title: { 
+      display: true, 
+      text: "Produksi Anggur Dunia 2018" 
+    } 
+  } 
+});
+</script>
+<h4 id="diagram-donut">Diagram Donut</h4>
+<canvas id="diaglin4" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues5 = ["Italia", "Perancis", "Spanyol", "USA", "Argentina"];
+var yValues5 = [55, 49, 44, 24, 15];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("diaglin4", {
+  type: "doughnut",
+  data: {
+    labels: xValues5,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues5
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Produksi Anggur Dunia 2018"
+    }
+  }
+});
+</script>
+<h2 id="menggambar-grafik-dan-diagram-menggunakan-google-chart">Menggambar Grafik dan Diagram Menggunakan <strong>Google Chart</strong></h2>
+<p><strong>Google Chart</strong> menyediakan fasilitas untuk menggambar berbagai diagram/grafik, mulai dari grafik garis sederhana sampai peta pohon hirarkhis yang rumit: + diagram pencar, + grafik garis, + diagram batang/kolom, + diagram area, + diagram lingkaran, + diagram donut, + diagram organisasi, + diagram peta/geo.</p>
+<p>Bagaimana Cara Menggunakan Google Bagan?</p>
+<p>Untuk menggunakan <strong>Google Chart</strong> di dalam file HTML (halaman Web), tambahkan tautan berikut ini untuk memanggilnya. Ini harus dilakukan sebelum sckrip untuk menggambar.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ot">src=</span><span class="st">&quot;https://www.gstatic.com/charts/loader.js&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Selajutnya, untuk menggunakan <strong>Google Chart</strong> tambahkan elemen <code>&lt;div&gt;</code> pada posisi untuk menampilkan diagram.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;DiagramId&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;max-width:700px; height:400px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
+<p>dengan <code>DiagramID</code> adalah identitas unik untuk gambar tersebut.</p>
+<p>Then load the Google Graph API:</p>
+<pre><code>Load the Visualization API and the corechart package
+Set a callback function to call when the API is loaded</code></pre>
+<p>1 google.charts.load(‘current’,{packages:[‘corechart’]});</p>
+<p>2 google.charts.setOnLoadCallback(drawChart);</p>
+</body>
+</html>

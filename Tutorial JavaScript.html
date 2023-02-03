@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>-</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="tutorial-javascript">Tutorial JavaScript</h1>
+<p>Sahid<br> <a href="">sahidyk@gmail.com</a></p>
+<p>JavaScript adalah bahasa pemrograman paling populer di dunia.</p>
+<p>JavaScript adalah bahasa pemrograman Web.</p>
+<p>JavaScript mudah dipelajari.</p>
+<p>Tutorial ini akan mengajarkan Anda JavaScript dari dasar hingga lanjutan.</p>
+<h2 id="belajar-dari-contoh">Belajar dari Contoh</h2>
+<p>Pada tutorial ini, setiap pembahasan disertai contoh kode JavaScript dan tampilan hasilnya di browser ketika file HTML dibuka dengan browser yang mendukung (diaktifkan) JavaScriptnya.</p>
+<h4 id="contoh-1-menampilkan-tanggal-dan-waktu">Contoh 1: Menampilkan tanggal dan waktu</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ot">onclick=</span><span class="st">&quot;document.getElementById(&#39;demo1&#39;).innerHTML = Date()&quot;</span><span class="kw">&gt;</span>Klik untuk menampilkan tanggal dan waktu sekarang.<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo1&quot;</span><span class="kw">&gt;&lt;/span&gt;</span> <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<button type="button" onclick="document.getElementById('demo1').innerHTML = Date()">
+<p>Klik untuk menampilkan tanggal dan waktu sekarang.</button></p>
+<p style="color:blue; background-color:yellow;"><span id="demo1"></span> </p>
+<p>Contoh lebih baik dari 1000 kata. Contoh seringkali lebih mudah dipahami daripada penjelasan teks.</p>
+<p>Jika Anda mencoba semua contoh, Anda akan belajar banyak tentang JavaScript, dalam waktu yang sangat singkat!</p>
+<h4 id="contoh-2-javascript-dapat-mengubah-konten-html">Contoh 2: JavaScript Dapat Mengubah Konten HTML</h4>
+<p>Salah satu dari banyak metode JavaScript HTML adalah <code>getElementById()</code>.</p>
+<p>Contoh di bawah ini “menemukan” elemen HTML (dengan id=“demo2”), dan mengubah konten elemen (<code>innerHTML</code>) menjadi “<strong>Inilah hasil JavaScript!</strong>”:</p>
+<p><code>document.getElementById("demo2").innerHTML = "Inilah hasil JavaScript!";</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo2&quot;</span><span class="kw">&gt;</span>Klik tombol di bawah ini untuk mengganti tulisan ini<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&#39;document.getElementById(&quot;demo2&quot;).innerHTML = &quot;Inilah hasil JavaScript!&quot;&#39;</span><span class="kw">&gt;</span>Klik aku!<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id="demo2">Klik tombol di bawah ini untuk mengganti tulisan ini</span>.</p>
+<button type="button" onclick='document.getElementById("demo2").innerHTML = "Inilah hasil JavaScript!"'>
+<p>Klik aku!</button></p>
+<p>JavaScript menerima tanda kutip ganda dan tunggal:</p>
+<p><code>document.getElementById('demo3').innerHTML = 'Inilah hasil JavaScript!';</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo3&#39;</span><span class="kw">&gt;</span>Klik tombol di bawah ini untuk mengganti tulisan ini<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;demo3&#39;).innerHTML = &#39;Inilah hasil JavaScript!&#39;&quot;</span><span class="kw">&gt;</span>Klik aku!<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id='demo3'>Klik tombol di bawah ini untuk mengganti tulisan ini</span></p>
+<button type="button" onclick="document.getElementById('demo3').innerHTML = 'Inilah hasil JavaScript!'">
+<p>Klik aku!</button></p>
+<hr />
+<h4 id="contoh-3-javascript-dapat-mengubah-nilai-atribut-html">Contoh 3: JavaScript Dapat Mengubah Nilai Atribut HTML</h4>
+<p>Dalam contoh ini JavaScript mengubah nilai atribut (sumber) <code>src</code> pada tag <code>&lt;img&gt;</code>:</p>
+<h4 id="bola-lampu">Bola Lampu</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;&lt;/center&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;lampu&quot;</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;pic_bulboff.gif&quot;</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;width:100px&quot;</span><span class="kw">&gt;&lt;p&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;lampu&#39;).src=&#39;pic_bulbon.gif&#39;&quot;</span><span class="kw">&gt;</span>Nyalakan lampu<span class="kw">&lt;/button&gt;&lt;button</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;lampu&#39;).src=&#39;pic_bulboff.gif&#39;&quot;</span><span class="kw">&gt;</span>Matikan lampu<span class="kw">&lt;/button&gt;&lt;/p&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/center&gt;</span></span></code></pre></div>
+<center>
+<img id="lampu" src="pic_bulboff.gif" style="width:100px"><p>
+<button onclick="document.getElementById('lampu').src='pic_bulbon.gif'">Nyalakan lampu</button><button onclick="document.getElementById('lampu').src='pic_bulboff.gif'">Matikan lampu</button></p>
+</center>
+<hr />
+<h4 id="contoh-4-javascript-dapat-mengubah-gaya-html-css">Contoh 4: JavaScript Dapat Mengubah Gaya HTML (CSS)</h4>
+<p>Mengubah gaya elemen HTML adalah varian dari mengubah atribut HTML:</p>
+<h4 id="contoh">Contoh</h4>
+<p><code>document.getElementById("demo4").style.color = "red";</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo4a&#39;</span><span class="kw">&gt;</span>Klik tombol di bawah ini untuk mengubah warna tulisan<span class="kw">&lt;/span&gt;&lt;/h1&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo4b&#39;</span><span class="kw">&gt;</span>Teks pertama.<span class="kw">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo4c&#39;</span><span class="kw">&gt;</span>Teks kedua.<span class="kw">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo4d&#39;</span><span class="kw">&gt;</span>Teks ke tiga.<span class="kw">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;ubahWarna()&quot;</span><span class="kw">&gt;</span>Ubah warna tulisan<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ubahWarna</span>() {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo4a&quot;</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;#ff0000&quot;</span><span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo4b&quot;</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;magenta&quot;</span><span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo4c&quot;</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;pink&quot;</span><span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo4d&quot;</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;green&quot;</span><span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<h1 style="color:blue; background-color:yellow;"><span id='demo4a'>Klik tombol di bawah ini untuk mengubah warna tulisan</span></h1>
+<p style="color:blue; background-color:yellow;">
+    <span id='demo4b'>Teks pertama.</span><br>
+    <span id='demo4c'>Teks kedua.</span><br>
+    <span id='demo4d'>Teks ke tiga.</span><br>
+</p>
+<button type="button" onclick="ubahWarna()">
+<p>Ubah warna tulisan</button></p>
+<script>
+function ubahWarna() {
+  document.getElementById("demo4a").style.color = "#ff0000";
+  document.getElementById("demo4b").style.color = "magenta";
+  document.getElementById("demo4c").style.color = "pink";
+  document.getElementById("demo4d").style.color = "green";
+}
+</script>
+<hr />
+<h4 id="contoh-5-javascript-dapat-menyembunyikan-elemen-html">Contoh 5: JavaScript Dapat Menyembunyikan Elemen HTML</h4>
+<p>Menyembunyikan elemen HTML dapat dilakukan dengan mengubah gaya <code>display</code>:</p>
+<p><code>document.getElementById("demo5").style.display = "block";</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo5&#39;</span><span class="kw">&gt;</span>Inilah JavaScript!<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;demo5&#39;).style.display=&#39;none&#39;&quot;</span><span class="kw">&gt;</span>Sembunyikan!<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id='demo5'>Inilah JavaScript!</span></p>
+<button type="button" onclick="document.getElementById('demo5').style.display='none'">
+<p>Sembunyikan!</button></p>
+<hr />
+<h4 id="contoh-6-javascript-dapat-menampilkan-elemen-html">Contoh 6: JavaScript Dapat Menampilkan Elemen HTML</h4>
+<p>Menampilkan elemen HTML tersembunyi juga dapat dilakukan dengan mengubah gaya <code>display</code>:</p>
+<h4 id="contoh-1">Contoh</h4>
+<p><code>document.getElementById("demo6").style.display = "block";</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo6&#39;</span>  <span class="er">style</span><span class="ot">=</span><span class="st">&quot;display:none&quot;</span><span class="kw">&gt;</span>Inilah JavaScript!<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;demo6&#39;).style.display=&#39;block&#39;&quot;</span><span class="kw">&gt;</span>Tampilkan!<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id='demo6'  style="display:none">Inilah JavaScript!</span></p>
+<button type="button" onclick="document.getElementById('demo6').style.display='block'">
+<p>Tampilkan!</button></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;demo6a&#39;</span><span class="kw">&gt;</span>Inilah JavaScript!<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>|<span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;demo6a&#39;).style.display=&#39;none&#39;&quot;</span><span class="kw">&gt;</span>Sembunyikan!<span class="kw">&lt;/button&gt;</span>|</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;document.getElementById(&#39;demo6a&#39;).style.display=&#39;block&#39;&quot;</span><span class="kw">&gt;</span>Tampilkan!<span class="kw">&lt;/button&gt;</span>|</span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id='demo6a'>Inilah JavaScript!</span></p>
+<p>|<button type="button" onclick="document.getElementById('demo6a').style.display='none'">Sembunyikan!</button>| <button type="button" onclick="document.getElementById('demo6a').style.display='block'">Tampilkan!</button>|</p>
+<h3 id="tahukah-anda">Tahukah Anda?</h3>
+<p>JavaScript dan <a href="https://www.w3schools.com/java/default.asp">Java</a> adalah dua bahasa pemrograman yang sama sekali berbeda, baik dalam konsep maupun desain.</p>
+<p>JavaScript ditemukan oleh Brendan Eich pada tahun 1995, dan menjadi standar ECMA pada tahun 1997. ECMA-262 adalah nama resmi standar. ECMAScript adalah nama resmi bahasa tersebut.</p>
+<h2 id="versi-javascript">Versi JavaScript</h2>
+<p>Versi ECMAScript telah disingkat menjadi ES1, ES2, ES3, ES5, dan ES6. Sejak 2016 versi baru diberi nama berdasarkan tahun (ECMAScript 2016/2017/2018/2019/2020).</p>
+<h3 id="edisi-ecmascript">Edisi ECMAScript</h3>
+<p>Memungkinkan tanda koma untuk parameter fungsi</p>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 35%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ver</th>
+<th style="text-align: left;">Nama Resmi</th>
+<th style="text-align: left;">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ES1</td>
+<td style="text-align: left;">ECMAScript 1 (1997)</td>
+<td style="text-align: left;">Edisi pertama</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ES2</td>
+<td style="text-align: left;">ECMAScript 2 (1998)</td>
+<td style="text-align: left;">Perubahan editorial</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ES3</td>
+<td style="text-align: left;">ECMAScript 3 (1999)</td>
+<td style="text-align: left;">Menambahkan ekspresi reguler <br> Menambahkan <code>try</code>/<code>catch</code> <br>Menambahkan <code>switch</code> <br> Menambahkan <code>do-while</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ES4</td>
+<td style="text-align: left;">ECMAScript 4</td>
+<td style="text-align: left;">Tidak pernah dirilis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ES5</td>
+<td style="text-align: left;">ECMAScript 5 (2009)</td>
+<td style="text-align: left;">Menambahkan “mode ketat”<br>Menambahkan dukungan JSON <br>Menambahkan <code>String.trim()</code> <br>Menambahkan <code>Array.isArray()</code> <br>Menambahkan metode iterasi Array <br> Memungkinkan tanda koma untuk objek literal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ES6</td>
+<td style="text-align: left;">ECMAScript 2015</td>
+<td style="text-align: left;">Menambahkan <code>let</code> dan <code>const</code> <br> Menambahkan nilai parameter <code>default</code> <br> Menambahkan <code>Array.find()</code> <br> Menambahkan <code>Array.findIndex()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Skrip ECMA 2016</td>
+<td style="text-align: left;">Menambahkan operator eksponensial (<code>**</code>) <br> Menambahkan <code>Array.includes()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ECMAScript 2017</td>
+<td style="text-align: left;">Menambahkan padding string <br> Menambahkan <code>Object.entries()</code> <br>Menambahkan <code>Object.values()</code> Menambahkan fungsi <code>async</code> <br>Menambahkan memori bersama</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Skrip ECMA 2018</td>
+<td style="text-align: left;">Menambahkan properti <code>rest</code> /<code>spread</code> <br> Menambahkan iterasi asinkron <br> Menambahkan <code>Promise.finally()</code> <br> Penambahan ke <code>RegExp</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ECMAScript 2019</td>
+<td style="text-align: left;"><code>String.trimStart()</code> <br> <code>String.trimEnd()</code> <br> <code>Array.flat()</code><br><code>Object.fromEntries</code><br> Binding <code>catch</code> opsional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ECMAScript 2020</td>
+<td style="text-align: left;">Operator Penggabungan Nullish (<code>??</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Nomor versi JavaScript asli adalah ES5 (2009) dan ES6 (2015). Sejak 2016, versi diberi nama berdasarkan tahun: ECMAScript 2016, 2017, 2018, 2019, 2020.</p>
+<h3 id="fitur-baru-di-ecmascript-2020">Fitur Baru di ECMAScript 2020</h3>
+<p>Berikut adalah fitur-fitur baru ini di ECMAScript 2020:</p>
+<ul>
+<li><a href="https://www.w3schools.com/js/js_2020.asp#mark_bigint"><code>BigInt</code>,</a></li>
+<li><a href="https://www.w3schools.com/js/js_2020.asp#mark_nullish_coalescing">Operator Koalescing Nullish (<code>??</code>),</a></li>
+<li><a href="https://www.w3schools.com/js/js_2020.asp#mark_optional_chaining">Operator Chaining Opsional (<code>?.</code>),</a></li>
+<li><code>Promise.allSettled()</code>,</li>
+<li><code>String.matchAll()</code>.</li>
+</ul>
+<p><strong>Peringatan</strong></p>
+<p>Fitur-fitur ini relatif baru. Browser lama mungkin memerlukan kode alternatif (<code>Polifill</code>)</p>
+<h3 id="javascript-bigint">JavaScript <code>BigInt</code></h3>
+<p>Variabel JavaScript <code>BigInt</code> digunakan untuk menyimpan nilai bilangan bulat besar yang terlalu besar untuk diwakili oleh bilangan JavaScript normal <code>Number</code>. Bilangan bulat JavaScript hanya akurat hingga 15 digit.</p>
+<h4 id="contoh-7-bilangan-bulat">Contoh 7: Bilangan Bulat</h4>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo7&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> x <span class="op">=</span> <span class="dv">1234567890123456</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> y <span class="op">=</span> <span class="dv">12345678901234567</span><span class="op">;</span> <span class="co">// terlalu besar</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> z <span class="op">=</span> <span class="dv">9999999999999999</span><span class="op">;</span> <span class="co">// terlalu besar</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> w <span class="op">=</span> <span class="dv">9999999999999999</span>n<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> u <span class="op">=</span> <span class="dv">1234567890123456789012345</span>n<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> v <span class="op">=</span> <span class="bu">BigInt</span>(<span class="dv">1234567890123456789012345</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo7&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> x <span class="op">+</span> <span class="st">&quot;&lt;br&gt;&quot;</span> <span class="op">+</span> y<span class="op">+</span> <span class="st">&quot;&lt;br&gt;&quot;</span> <span class="op">+</span> z<span class="op">+</span> <span class="st">&quot;&lt;br&gt;&quot;</span> <span class="op">+</span> w<span class="op">+</span> <span class="st">&quot;&lt;br&gt;&quot;</span> <span class="op">+</span> u<span class="op">+</span> <span class="st">&quot;&lt;br&gt;&quot;</span> <span class="op">+</span> v<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<h4 id="bilangan-pada-javascript">Bilangan Pada JavaScript</h4>
+<h5 id="presisi-bilangan-bulat-dan-bigint">Presisi Bilangan Bulat dan <code>BigInt</code></h5>
+<p>Bilangan bulat (bilangan tanpa titik desimal atau notasi eksponen) akurat sampai 15 digit. Untuk membuat <code>BigInt</code>, tambahkan <code>n</code> di akhir bilangan bulat atau gunakan fungsi <code>BigInt()</code>.</p>
+<p style="color:blue; background-color:yellow;"><span id="demo7"></span></p>
+<script>
+let x = 1234567890123456;
+let y = 12345678901234567; // terlalu besar
+let z = 9999999999999999; // terlalu besar
+let w = 9999999999999999n;
+let u = 1234567890123456789012345n;
+let v = BigInt(1234567890123456789012345)
+document.getElementById('demo7').innerHTML = x + "<br>" + y+ "<br>" + z+ "<br>" + w+ "<br>" + u+ "<br>" + v;
+</script>
+<p>Jenis JavaScript <code>typeof</code> <code>BigInt</code> adalah “bigint”. <code>BigInt</code> didukung di semua browser sejak September 2020:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Chrome 67</td>
+<td>Edge 79</td>
+<td>Firefox 68</td>
+<td>Safari 14</td>
+<td>Opera 54</td>
+</tr>
+<tr class="even">
+<td>May 2018</td>
+<td>Jan 2020</td>
+<td>Jul 2019</td>
+<td>Sep 2020</td>
+<td>Jun 2018</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="operator-koalescing-nullish-">Operator Koalescing Nullish (??)</h3>
+<p>Operator <code>??</code> menghasilkan nilai argumen pertama jika nilainya <code>null</code> atau <code>undefined</code>. Jika tidak, operator <code>??</code> menghasilkan nilai argumen kedua.</p>
+<h4 id="contoh-8">Contoh 8</h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>let name = null;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>let text = &quot;missing&quot;;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>let result = name ?? text;</span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id="demo8"></span></p>
+<script>
+let nama = null;
+let teks = "kosong";
+let hasil = nama ?? teks;
+document.getElementById("demo8").innerHTML = "Namanya adalah " + hasil; 
+</script>
+<p>Operator <code>nullish</code> didukung di semua browser sejak Maret 2020:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Chrome 80</td>
+<td>Edge 80</td>
+<td>Firefox 72</td>
+<td>Safari 13.1</td>
+<td>Opera 67</td>
+</tr>
+<tr class="even">
+<td>Feb 2020</td>
+<td>Feb 2020</td>
+<td>Jan 2020</td>
+<td>Mar 2020</td>
+<td>Mar 2020</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operator-chaining-opsional-">Operator Chaining Opsional (??)</h3>
+<p>Operator <code>?.</code> menghasilkan <code>undefined</code> jika suatu objek bernilai <code>undefined</code> atau <code>null</code> (alih-alih menampilkan pesan kesalahan).</p>
+<h4 id="contoh-9">Contoh 9</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo9&quot;</span><span class="kw">&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> mobil <span class="op">=</span> {<span class="dt">type</span><span class="op">:</span><span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span><span class="st">&quot;500&quot;</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span><span class="st">&quot;white&quot;</span>}<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo9&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> mobil <span class="op">?.</span> <span class="at">nama</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id="demo9"></span></p>
+<script>
+// Mendefinisikan objek mobil:
+const mobil = {type:"Fiat", model:"500", color:"merah"};
+// Menanyakan nama mobil (tidak didefinisikan):
+document.getElementById("demo9").innerHTML = mobil ?. nama;
+</script>
+<p>Operator <em>chaining</em> opsional didukung di semua browser sejak Maret 2020:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Chrome 80</td>
+<td>Edge 80</td>
+<td>Firefox 74</td>
+<td>Safari 13.1</td>
+<td>Opera 67</td>
+</tr>
+<tr class="even">
+<td>Feb 2020</td>
+<td>Feb 2020</td>
+<td>Mar 2020</td>
+<td>Mar 2020</td>
+<td>Mar 2020</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dukungan-browser">Dukungan Browser</h3>
+<p>ECMAScript 1 - 6 didukung penuh di semua browser modern.</p>
+<hr />
+<h4 id="dukungan-browser-untuk-es5-2009">Dukungan Browser untuk ES5 (2009)</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Browser</th>
+<th style="text-align: left;">Versi</th>
+<th style="text-align: left;">Dari tanggal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Chrome</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">November 2012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Firefox</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Mei 2013</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IE</td>
+<td style="text-align: left;">9*</td>
+<td style="text-align: left;">Maret 2011</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IE / Edge</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Sep 2012</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Safari</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Juli 2012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Opera</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Juli 2013</td>
+</tr>
+</tbody>
+</table>
+<p>* Internet Explorer 9 tidak mendukung ECMAScript 5 <code>use strict</code>.</p>
+<hr />
+<h4 id="dukungan-browser-untuk-es6-2015">Dukungan Browser untuk ES6 (2015)</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Browser</th>
+<th style="text-align: left;">Versi</th>
+<th style="text-align: left;">Tanggal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Chrome</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">Mei 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Firefox</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">Maret 2017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edge</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Agustus 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Safari</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Sep 2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opera</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">Juni 2016</td>
+</tr>
+</tbody>
+</table>
+<p>Internet Explorer tidak mendukung ECMAScript 2015.</p>
+<hr />
+<h4 id="dukungan-browser-untuk-ecmascript-2016">Dukungan Browser untuk ECMAScript 2016</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Browser</th>
+<th style="text-align: left;">Versi</th>
+<th style="text-align: left;">Tanggal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Chrome</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">Juli 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Firefox</td>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">Juni 2017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edge</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Agustus 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Safari</td>
+<td style="text-align: left;">10.1</td>
+<td style="text-align: left;">Maret 2017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opera</td>
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">Agustus 2016</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mengapa-belajar-javascript">Mengapa Belajar JavaScript?</h3>
+<p>JavaScript adalah salah satu dari <strong>3 bahasa yang</strong> <strong>harus</strong> dipelajari semua pengembang web:</p>
+<ol>
+<li><a href="https://www.w3schools.com/html/default.asp"><strong>HTML</strong></a> untuk mendefinisikan konten halaman web</li>
+<li><a href="https://www.w3schools.com/css/default.asp"><strong>CSS</strong></a> untuk menentukan tata letak halaman web</li>
+<li><strong>JavaScript</strong> untuk memprogram isi halaman web</li>
+</ol>
+<hr />
+<h3 id="kecepatan-belajar">Kecepatan Belajar</h3>
+<p>Dalam setiap tutorial bahasa pemrograman, kecepatan belajar adalah pilihan Anda.</p>
+<p>Semua terserah Anda.</p>
+<p>Jika Anda mengalami kesulitan, istirahatlah, atau baca kembali materinya.</p>
+<p><strong>Selalu</strong> pastikan Anda memahami <strong>semua</strong> contoh yang diberikan.</p>
+<p>Satu-satunya cara untuk menjadi programmer yang pintar adalah dengan: Berlatih, Praktik, Praktik, Menulis Program, Menulis Program, Menulis Program!</p>
+<hr />
+<h3 id="pertanyaan-umum">Pertanyaan Umum</h3>
+<ul>
+<li>Bagaimana cara mendapatkan JavaScript?</li>
+<li>Di mana saya dapat mengunduh JavaScript?</li>
+<li>Apakah JavaScript Gratis?</li>
+</ul>
+<p><em>Anda tidak perlu mendapatkan atau mengunduh JavaScript. JavaScript sudah berjalan di browser Anda di komputer, di tablet, dan di ponsel pintar Anda. JavaScript gratis digunakan untuk semua orang.</em></p>
+<h2 id="cara-menyisipkan-perintahprogram-javascript">Cara Menyisipkan Perintah/Program JavaScript</h2>
+<h3 id="perintahprogram-javascript-ditulis-di-dalam-tag-script">Perintah/Program JavaScript Ditulis di Dalam Tag <code>&lt;script&gt;</code></h3>
+<p>Di dalam file HTML, perintah-perintah JavaScript disisipkan di antara tag <code>&lt;script&gt;</code> dan <code>&lt;/script&gt;</code>.</p>
+<h4 id="contoh-2">Contoh</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo10&quot;</span><span class="kw">&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo10&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Tulisan ini ditampilkan oleh perintah JavaScript&quot;</span><span class="op">;</span>  </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p style="color:blue; background-color:yellow;"><span id="demo10"></span></p>
+<script>
+document.getElementById("demo10").innerHTML = "Tulisan ini ditampilkan oleh perintah JavaScript";
+</script>
+<p>Contoh JavaScript lama mungkin menggunakan atribut <code>type</code>: <code>&lt;script type="text/javascript"&gt;</code>.</p>
+<p>Atribut <code>type</code> sekarang tidak diperlukan. JavaScript adalah bahasa skrip asli dalam HTML.</p>
+<hr />
+<h3 id="perintahprogramskrip-javascript-dapat-ditulis-pada-bagian-head-atau-body">Perintah/Program/Skrip JavaScript Dapat Ditulis Pada Bagian <code>&lt;head&gt;</code> atau <code>&lt;body&gt;</code></h3>
+<p>Anda dapat menempatkan sejumlah skrip dalam satu dokumen HTML.</p>
+<p>Skrip JavScript dapat ditempatkan pada bagian <code>&lt;body&gt;</code>, atau pada bagian <code>&lt;head&gt;</code>, atau di keduanya, di dalam file HTML.</p>
+<hr />
+<h4 id="javascript-di-bagian-head">JavaScript di Bagian <code>&lt;head</code>&gt;</h4>
+<p>Dalam contoh ini, fungsi JavaScript <code>ubahParagraf</code> ditempatkan/didefinisikan pada bagian <code>&lt;head&gt;</code> di dalam file HTML. Fungsi tersebut dipanggil (dijalankan) ketika tombol <code>Klik untuk mengubah paragraf!</code> diklik.</p>
+<h4 id="contoh-3">Contoh</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>  </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span>  </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span>  </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span>  </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ubahParagraf</span>() {  </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo11&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Paragraf diubah.&quot;</span><span class="op">;</span>  </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}  </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span>  </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span>  </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h2&gt;</span>Contoh JavaScript Di Bagian Head<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo11&quot;</span><span class="er">\</span><span class="kw">&gt;</span>Ini adalah sebuah paragraf.<span class="kw">&lt;/p&gt;</span>  </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type\</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;ubahParagraf()&quot;</span><span class="kw">&gt;</span>Klik untuk mengubah paragraf!<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span>  </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h3 id="javascript-di-bagian-body">JavaScript di Bagian <code>&lt;body&gt;</code></h3>
+<p>Dalam contoh ini, fungsi JavaScript <code>ubahParagraf1</code> ditempatkan/didefinisikan di bagian <code>&lt;body&gt;</code> di dalam file HTML. Fungsi tersebut dipanggil (dijalankan) ketika tombol <code>Klik untuk mengubah paragraf!</code> diklik.</p>
+<h4 id="contoh-4">Contoh</h4>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h2&gt;</span>Contoh JavaScript Di Bagian Body<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo12&quot;</span><span class="kw">&gt;</span>Ini adalah sebuah paragraf.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;ubahParagraf1()&quot;</span><span class="kw">&gt;</span>Klik untuk mengubah paragraf!<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ubahParagraf1</span>() {<span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo12&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Paragraf diubah.&quot;</span><span class="op">;</span>}</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Menempatkan skrip di bagian bawah elemen HTML <code>&lt;body&gt;</code> meningkatkan kecepatan tampilan, karena interpretasi skrip memperlambat tampilan.</p>
+<h3 id="file-skrip-javascript">File Skrip JavaScript</h3>
+<p>Skrip JavaScript juga dapat ditulis di dalam sebuah file eksternal yang terpisah dengan file HTML. File yang berisi skrip JavaScript biasanya diberi ekstensi <code>.js</code>. Skrip eksternal praktis ketika kode/skrip yang sama digunakan di banyak halaman web (file HTML) yang berbeda. Berikut adalah contoh file skrips JavaScript dan cara menggunakannya di dalam file HTML.</p>
+<p>Contoh file eksternal: <code>ubahParagraf.js</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>function ubahParagraf() {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraf aslinya diubah dengan paragraf ini.&quot;;</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Untuk menggunakan skrip eksternal, masukkan nama file skrip di atribut (sumber) <code>src</code> pada tag <code>&lt;script&gt;</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;ubahParagraf.js&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Anda dapat memanggil (menempatkan referensi) skrip eksternal di bagian <code>&lt;head&gt;</code> atau <code>&lt;body&gt;</code> sesuka Anda. Script akan berfungsi seolah-olah terletak persis di mana tag <code>&lt;script&gt;</code> berada. Skrip eksternal tidak boleh berisi/memuat tag <code>&lt;script&gt;</code>.</p>
+<hr />
+<h4 id="keuntungan-file-javascript-eksternal">Keuntungan File JavaScript Eksternal</h4>
+<p>Menempatkan skrip di file eksternal memiliki beberapa keuntungan:</p>
+<ul>
+<li>Ini memisahkan HTML dan kode/program JavaScript.</li>
+<li>Cara ini membuat HTML dan JavaScript lebih mudah dibaca dan diperbaiki.</li>
+<li>File JavaScript yang dimuat di dalam memori dapat mempercepat pemuatan halaman.</li>
+</ul>
+<p>Untuk menambahkan beberapa file skrip ke satu halaman - gunakan beberapa tag skrip:</p>
+<p>Contoh</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;program1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;program2.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p>Referensi Eksternal</p>
+<p>File skrip JavaScript eksternal dapat dirujuk dalam 3 cara berbeda:</p>
+<ol>
+<li>dengan URL (alamat web) lengkap,</li>
+<li>dengan merujuk alamat/folder file (seperti <code>/js/</code>),</li>
+<li>tanpa menuliskan alamat/folder file (dengan asumsi file JavaScript disimpan pada folder yang sama dengan tempat file HTML).</li>
+</ol>
+<p>Contoh berikut ini menggunakan alamat <strong>URL lengkap</strong> untuk memanggil file JavaScript <code>program1.js</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://www.w3schools.com/js/program1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p>Contoh berikut ini menggunakan <strong>jalur file</strong> (alamat folder) untuk menautkan ke file <code>program1.js</code>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;/js/program1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p>Contoh ini tidak menggunakan jalur (alamat folder) untuk menautkan ke file <code>program1.js</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;program1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<hr />
+<h2 id="beberapa-cara-menampilkan-output-javascript">Beberapa Cara Menampilkan Output JavaScript</h2>
+<p>JavaScript dapat “menampilkan” data dengan cara empat cara berbeda:</p>
+<ul>
+<li>menulis ke dalam elemen HTML, menggunakan <code>innerHTML</code>,</li>
+<li>menulis ke dalam output HTML menggunakan <code>document.write()</code>,</li>
+<li>menulis ke dalam kotak peringatan, menggunakan <code>window.alert()</code>, dan</li>
+<li>menulis ke konsol browser, menggunakan <code>console.log()</code>.</li>
+</ul>
+<h3 id="menggunakan-innerhtml">Menggunakan <code>innerHTML</code></h3>
+<p>Untuk mengakses elemen HTML, JavaScript dapat menggunakan metode <code>document.getElementById(id)</code>, dengan <code>id</code> adalah nama identitas unik yang didefinisikan pada elemen HTML (judul, paragraf, dan sebagainya). Properti <code>innerHTML</code> mendefinisikan konten/isi elemen HTML.</p>
+<h4 id="contoh-10">Contoh 10</h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>Menampilkan hasil perhitungan<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color:blue; background-color:yellow;&quot;</span><span class="kw">&gt;</span> 5 + 6 = <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;demo14&quot;</span><span class="kw">&gt;&lt;/span&gt;</span> <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;demo14&quot;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span><span class="op">;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Menampilkan hasil perhitungan</p>
+<p style="color:blue; background-color:yellow;"> 5 + 6 = <span id="demo14"></span> </p>
+<script> 
+document.getElementById("demo14").innerHTML = 5 + 6; 
+</script>
+<p>Menampilkan data di dalam elemen HTML sering digunakan untuk mengubah properti <code>innerHTML</code> elemen HTML tersebut.</p>
+<h3 id="menggunakan-documentwrite">Menggunakan <code>document.write()</code></h3>
+<p>Untuk tujuan pengujian, akan lebih mudah untuk digunakan <code>document.write()</code>. Jangan pernah menggunakan perintah <code>document.write()</code> setelah dokumen HTML selesai dimuat (perintah <code>document.write()</code> ditempatkan di bagian akhir file HTML), karena hal ini akan <strong>menghapus semua HTML yang ada</strong> :</p>
+<h4 id="contoh-11">Contoh 11</h4>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span>  </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">write</span>(<span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span>)<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<script>  
+document.write("5+6 = ", 5 + 6); 
+</script>
+<h4 id="contoh-12">Contoh 12</h4>
+<p>&lt;!DOCTYPE html&gt;<br />
+&lt;html&gt;<br />
+&lt;body&gt;</p>
+<h1>Contoh Halaman Web</h1>
+<p>Ini adalah paragraf.</p>
+<p>&lt;button type=“button” onclick=“document.write(”5+6 = “, 5 + 6)”&gt;Klik saya untuk mengganti isi halaman ini dengan hasil perhitungan!</button></p>
+</body>
+</html>
+<p>Metode <code>document.write()</code> sebaiknya hanya digunakan untuk tujuan pengujian.</p>
+<h3 id="menggunakan-windowalert">Menggunakan <code>window.alert()</code></h3>
+<p>Anda dapat menggunakan kotak peringatan untuk menampilkan hasil JavaScript.</p>
+<h4 id="contoh-13">Contoh 13</h4>
+<div class="sourceCode" id="cb23"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">alert</span>(<span class="st">&#39;5+6 = &#39;</span><span class="op">,</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span>)<span class="op">;</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<script> 
+window.alert("Ingat, untuk menjadi seorang programer Anda harus selalu berlatih!"); 
+alert("Tanpa menulis program, Anda tidak akan mampu membuat sendiri program komputer!");
+</script>
+<p>Kata kunci <code>window</code>boleh tidak ditulis, artinya, Anda boleh hanya menuliskan perintah <code>alert()</code>.</p>
+<p>Dalam JavaScript, objek jendela adalah objek yang memiliki lingkup global. Hal ini berarti bahwa variabel, properti, dan metode aslinya milik objek jendela. Karena lingkupnya global, kata kunci <code>window</code>bersifat opsional.</p>
+<h3 id="menggunakan-consolelog">Menggunakan <code>console.log()</code></h3>
+<p>Untuk keperluan penelusuran kesalahan (<em>debugging</em>), Anda dapat memanggil metode <code>console.log()</code> di browser untuk menampilkan data.</p>
+<h4 id="contoh-14">Contoh 14</h4>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span>  </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span>)<span class="op">;</span>  </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<script>  
+console.log(5 + 6);  
+</script>
+<h3 id="kemampuan-mencetak-javascript">Kemampuan Mencetak JavaScript</h3>
+<p>JavaScript tidak memiliki objek atau metode cetak. JavaScript tidak memiliki kemampuan mengakses perangkat keluaran dalam bentuk cetak. Satu-satunya pengecualian adalah Anda dapat memanggil metode <code>window.print()</code> dalam browser untuk mencetak isi layar browser.</p>
+<h4 id="contoh-15">Contoh 15</h4>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;window.print()&quot;</span><span class="kw">&gt;</span>Cetak halaman ini.<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<button onclick="window.print()">
+<p>Cetak halaman ini.</button></p>
+</body>
+</html>
