@@ -10,7 +10,7 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 8. [Using ICT to Support Joyful Learning in Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support JL.pdf)
 9. [Using ICT to Support RME-Based Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support RME.pdf)
 10. [Matematika itu Mengasyikkan dan Menyenangkan](Matematika itu Menyenangkan dan Mengasyikkan.pdf)
-11. []Pemrograman dengan Bahasa LOGO](PemrogramanLOGO.pdf)
+11. [Pemrograman dengan Bahasa LOGO](PemrogramanLOGO.pdf)
 12. [Membuat Dokumen dan Catatan Ilmiah dengan Markdown](MarkdownTypora4ScientifDocs.pdf)
 13. [Membuat Dokumen Matematika dengan Markdown](MembuatDokumenMatematikadenganMarkdown.pdf)
 14. [Pendekatan Baru Pembelajaran Persamaan Garis Lurus](Pendekatan Baru Pembelajaran Persamaan Garis Lurus.pdf)
