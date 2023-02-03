@@ -1,8 +1,17 @@
 # Publikasi Sahid
-Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini.
+Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Semoga bermanfaat bagi para pembaca.
 1. [Aplikasi Komputer untuk Matematika dengan Euler Math Toolbox (EMT)](CetakAplikom.pdf)
 2. [Tutorial JavaScript](TutorialJavaScript.html)
 3. [JavaScript untuk Perhitungan Aritmetika](JavaScript4Arithmetic.html)
 4. [Menggambar Grafik dengan JavaScript](JS4Grafik.html)
 5. [Learnig Management System (LMS): Tulisan lama, 2006](LMS4SEAMOLEC.pdf)
 6. [Using Mathematics Problem Solving to Support Joyful Learning in Mathematics Teaching and Leanring](UsingMathematicsProblemSolvingtoImproveStudentMathematicalThinkinginLearningMathematics.pdf)
+7. [Developing Instructional Media for Primry Schol Mathematics Teaching and Learning](Developing Instructional Media for Primry Schol Mathematics Teaching and Learning.pdf)
+8. [Using ICT to Support Joyful Learning in Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support JL.pdf)
+9. [Using ICT to Support RME-Based Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support RME.pdf)
+10. [Matematika itu Mengasyikkan dan Menyenangkan](Matematika itu Menyenangkan dan Mengasyikkan.pdf)
+11. []Pemrograman dengan Bahasa LOGO](PemrogramanLOGO.pdf)
+12. [Membuat Dokumen dan Catatan Ilmiah dengan Markdown](MarkdownTypora4ScientifDocs.pdf)
+13. [Membuat Dokumen Matematika dengan Markdown](MembuatDokumenMatematikadenganMarkdown.pdf)
+14. [Pendekatan Baru Pembelajaran Persamaan Garis Lurus](Pendekatan Baru Pembelajaran Persamaan Garis Lurus.pdf)
+15. [Panduan Pengembangan Konten Digital](Panduan Pengembangan Konten Digital.pdf)
