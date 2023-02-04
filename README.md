@@ -1,5 +1,5 @@
-# Publikasi Sahid
-Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Semoga bermanfaat bagi para pembaca.
+# Kumpulan Tulisan Sahid (sahidyk@gmail.com, sahid@uny.ac.id)
+Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Beberapa judul merupakan bahan pelatihan di SEAMEO QITEP in MATHEMATICS yang saya tulis sewaktu saya diminta membantu di SEQIM. Beberapa tulisan juga merupakan permintaan dari teman di SEAMOLEC dan ICE. Semoga bermanfaat bagi para pembaca. Tulisan-tulisan ini saya saya hibahkan sebagai wakaf dan amal jariyah dan memberikan mafaat kelak di yaumul akhir. Aamiin. 
 1. [Aplikasi Komputer untuk Matematika dengan Euler Math Toolbox (EMT)](CetakAplikom.pdf)
 2. [Tutorial JavaScript](TutorialJavaScript.html)
 3. [JavaScript untuk Perhitungan Aritmetika](JavaScript4Arithmetic.html)
