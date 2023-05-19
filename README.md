@@ -1,5 +1,5 @@
 # Kumpulan Tulisan Sahid ([sahidyk@gmail.com](mailto:sahidyk@gmail.com), [sahid@uny.ac.id](mailto:sahid@uny.ac.id))
-Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Beberapa judul merupakan bahan pelatihan di SEAMEO QITEP in MATHEMATICS yang saya tulis sewaktu saya diminta membantu di SEQIM. Beberapa tulisan juga merupakan permintaan dari teman di SEAMOLEC dan ICE. Semoga bermanfaat bagi para pembaca. Tulisan-tulisan ini saya saya hibahkan sebagai wakaf dan amal jariyah dan memberikan mafaat kelak di yaumul akhir. Aamiin. 
+Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Beberapa judul merupakan bahan pelatihan di SEAMEO QITEP in MATHEMATICS yang saya tulis sewaktu saya diminta membantu di SEQIM. Beberapa tulisan juga merupakan permintaan dari teman di SEAMOLEC dan ICE. Semoga bermanfaat bagi para pembaca. Tulisan-tulisan ini saya saya hibahkan sebagai wakaf dan amal jariyah dan memberikan manfaat kelak di yaumul akhir. Aamiin. 
 1. [Panduan Markdown](https://panduan-markdown.netlify.app/)
 2. [Aplikasi Komputer untuk Matematika dengan Euler Math Toolbox (EMT)](CetakAplikom.pdf)
 3. [Membuat Dokumen dan Catatan Ilmiah dengan Markdown](MarkdownTypora4ScientifDocs.pdf)
