@@ -17,4 +17,4 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 16. [Matematika itu Mengasyikkan dan Menyenangkan](Matematika itu Menyenangkan dan Mengasyikkan.pdf)
 17. [Learnig Management System (LMS): Tulisan lama, 2006](LMS4SEAMOLEC.pdf)
 
-Anda adalah pengunjung halaman ini yang ke: ![Visitor Count](https://profile-counter.glitch.me/sahidyk/count.svg)
+Pada hari ini Anda adalah pengunjung halaman ini yang ke: ![Visitor Count](https://profile-counter.glitch.me/sahidyk/count.svg)
