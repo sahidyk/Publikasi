@@ -10,7 +10,7 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 9. [Pendekatan Baru Pembelajaran Persamaan Garis Lurus](Pendekatan Baru Pembelajaran Persamaan Garis Lurus.pdf)
 10. [Panduan Pengembangan Konten Digital](Panduan Pengembangan Konten Digital.pdf)
 11. [Using Mathematics Problem Solving to Support Joyful Learning in Mathematics Teaching and Leanring](UsingMathematicsProblemSolvingtoImproveStudentMathematicalThinkinginLearningMathematics.pdf)
-12. [Developing Instructional Media for Primry Schol Mathematics Teaching and Learning](Developing Instructional Media for Primry Schol Mathematics Teaching and Learning.pdf)
+12. [Developing Instructional Media for Primary School Mathematics Teaching and Learning](Developing Instructional Media for Primry Schol Mathematics Teaching and Learning.pdf)
 13. [Using ICT to Support Joyful Learning in Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support JL.pdf)
 14. [Using ICT to Support RME-Based Mathematics Teaching and Learning at Junior Secondary School](Using ICT to Support RME.pdf)
 15. [Aplikasi Komputer untuk Matematika dengan Euler Math Toolbox (EMT)](CetakAplikom.pdf)
