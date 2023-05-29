@@ -19,4 +19,4 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 
 Pada hari ini Anda adalah pengunjung halaman ini yang ke: ![Visitor Count](https://profile-counter.glitch.me/sahidyk/count.svg)
 
-![Scan Me](QR4publikasi.png)
+<img src="QR4publikasi.png" style="zoom:30%;" />
