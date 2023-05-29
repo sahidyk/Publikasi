@@ -1,8 +1,10 @@
+----
 <head>
     <title>Kumpulan Tulisan Sahid</title>
     <script defer src="counter1.js"></script>
     <link rel="stylesheet" href="counter1.css" />
 </head>
+-----
 
 # Kumpulan Tulisan Sahid ([sahidyk@gmail.com](mailto:sahidyk@gmail.com), [sahid@uny.ac.id](mailto:sahid@uny.ac.id))
 Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulkan dalam repositori ini. Beberapa judul merupakan bahan pelatihan di SEAMEO QITEP in MATHEMATICS yang saya tulis sewaktu saya diminta membantu di SEQIM. Beberapa tulisan juga merupakan permintaan dari teman di SEAMOLEC dan ICE. Semoga bermanfaat bagi para pembaca. Tulisan-tulisan ini saya saya hibahkan sebagai wakaf dan amal jariyah dan memberikan manfaat kelak di yaumul akhir. Aamiin. 
