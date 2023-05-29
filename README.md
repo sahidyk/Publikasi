@@ -18,3 +18,4 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 17. [Learnig Management System (LMS): Tulisan lama, 2006](LMS4SEAMOLEC.pdf)
 
 Pada hari ini Anda adalah pengunjung halaman ini yang ke: ![Visitor Count](https://profile-counter.glitch.me/sahidyk/count.svg)
+![Scan Me](QR4publikasi.png)
