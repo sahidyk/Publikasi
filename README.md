@@ -17,6 +17,7 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 16. [Aplikasi Komputer untuk Matematika dengan Euler Math Toolbox (EMT)](CetakAplikom.pdf)
 17. [Matematika itu Mengasyikkan dan Menyenangkan](Matematika itu Menyenangkan dan Mengasyikkan.pdf)
 18. [Learnig Management System (LMS): Tulisan lama, 2006](LMS4SEAMOLEC.pdf)
+19. [Antara Teorema Pythagoras dan Trigonometri: Saling Tergantung atau Bebas?](Teorema Pythagoras v.s. Trigonometri Saling Tergantung atau Bebas.pdf)
 
 **Pada hari ini Anda adalah pengunjung halaman ini yang ke:** ![Visitor Count](https://profile-counter.glitch.me/sahidyk/count.svg)
 
