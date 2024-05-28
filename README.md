@@ -4,7 +4,7 @@ Berikut adalah kumpulan tulisan saya yang selama ini tercecer, saya coba kumpulk
 2. [Membuat Dokumen dan Catatan Ilmiah dengan Markdown](MarkdownTypora4ScientifDocs.pdf)
 3. [Membuat Dokumen Matematika dengan Markdown](MembuatDokumenMatematikadenganMarkdown.pdf)
 4. [Membuat Kelas dengan GeoGebra dan Mengintegrasikannya ke Google Classroom](Membuat Kelas dengan GeoGebra dan Mengintegrasikannya ke Google Classroom.pdf)
-5. [Tutorial JavaScript](TutorialJavaScript.html)
+5. [Tutorial JavaScript](Tutorial JavaScript.html)
 6. [JavaScript untuk Perhitungan Aritmetika](JavaScript4Arithmetic.html)
 7. [Menggambar Grafik dengan JavaScript](JS4Grafik.html)
 8. [Pemrograman dengan Bahasa LOGO](PemrogramanLOGO.pdf)
